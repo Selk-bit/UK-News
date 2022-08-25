@@ -29,16 +29,16 @@ class AppServiceProvider extends ServiceProvider
 
     }
 
-    public function articles()
-    {
-        $articles_ids = Article::query()->select("id")->latest("id")->limit(20)->pluck("id");
-        return Article::query()->select("id", "title", "summary", "thumbnail", "created_at", "popular", "heading", "views")->whereIn("id", $articles_ids)->get();
-    }
+    // public function articles()
+    // {
+    //     $articles_ids = Article::query()->select("id")->latest("id")->limit(20)->pluck("id");
+    //     return Article::query()->select("id", "title", "summary", "thumbnail", "created_at", "popular", "heading", "views")->whereIn("id", $articles_ids)->get();
+    // }
 
-    public function populars()
-    {
-        $populars_ids = Article::query()->select("id")->where("popular", 1)->orderBy("id")->limit(10)->pluck("id");
-        return Article::query()->select("id", "title", "summary", "thumbnail", "created_at", "popular", "heading", "views")->whereIn("id", $populars_ids)->get();
+    // public function populars()
+    // {
+    //     $populars_ids = Article::query()->select("id")->where("popular", 1)->orderBy("id")->limit(10)->pluck("id");
+    //     return Article::query()->select("id", "title", "summary", "thumbnail", "created_at", "popular", "heading", "views")->whereIn("id", $populars_ids)->get();
 
-    }
+    // }
 }
