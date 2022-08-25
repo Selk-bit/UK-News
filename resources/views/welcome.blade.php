@@ -93,7 +93,7 @@
                         @foreach ($articles as $article)
                             <div class="single_post post_type6 post_type7">
                                 <div class="post_img gradient1">
-                                    <a href="#">
+                                    <a href="{{ route("article", ["id" => $article->id]) }}">
                                         <img src="{{ $article->thumbnail }}" alt="">
                                     </a>
                                 </div>
@@ -104,7 +104,7 @@
                                         </div>
                                     @endif
                                     <h4>
-                                        <a href="post1.html"> {{ \Illuminate\Support\Str::limit($article->title, 60) }} </a>
+                                        <a href="{{ route("article", ["id" => $article->id]) }}"> {{ \Illuminate\Support\Str::limit($article->title, 60) }} </a>
                                     </h4>
                                 </div>
                             </div>
