@@ -91,13 +91,13 @@
 					<div class="single_post_heading">
 						<h1>{{ $article->title }}</h1>
 						<div class="space-10"></div>
-						<p>{{ $article->summary }}</p>
+						{{-- <p>{{ $article->summary }}</p> --}}
 					</div>
 					<div class="space-40"></div>
 					<img src="{{ $article->thumbnail }}" alt="image">
 					<div class="space-20"></div>
 					<div class="space-20"></div>
-                    {{ $article->body }}
+                    {!! $article->body !!}
                     {{-- @foreach (explode("\n", $article->body) as $paragraph)
                         <p>
                             {{ $paragraph }}
