@@ -24,6 +24,6 @@ Route::get('/trends', [ArticleController::class, 'get_trends'])->name('trends');
 Route::get('/contact', function () {
     return view("contact");
 })->name('contact');
-Route::get('/article/{id}', [ArticleController::class, 'show_article'])->name('article');
+Route::get('/article/{slug}/{id}', [ArticleController::class, 'show_article'])->name('article');
 
 

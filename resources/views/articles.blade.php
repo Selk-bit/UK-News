@@ -10,7 +10,7 @@
                             <div class="col-lg-6">
                                 <div class="single_post post_type3 mb30">
                                     <div class="post_img">
-                                        <a href="{{ route("article", ["id" => $article->id]) }}">
+                                        <a href="{{ route("article", ["slug" => \Illuminate\Support\Str::slug($article->title), "id" => $article->id]) }}">
                                             <img src="{{ $article->thumbnail }}" alt="">
                                         </a>	<span class="tranding">
                                             <i class="fas fa-bolt"></i>
@@ -22,10 +22,10 @@
                                                 <a href="#">{{ \Carbon\Carbon::parse($article->created_at)->diffForhumans() }}</a>
                                             </div>
                                         @endif
-                                        <h4><a href="{{ route("article", ["id" => $article->id]) }}">{{ $article->title }}</a></h4>
+                                        <h4><a href="{{ route("article", ["slug" => \Illuminate\Support\Str::slug($article->title), "id" => $article->id]) }}">{{ $article->title }}</a></h4>
                                         <div class="space-10"></div>
                                         <p class="post-p">{{ $article->summary }}</p>
-                                        <div class="space-20"></div>	<a href="{{ route("article", ["id" => $article->id]) }}" class="readmore">Read More</a>
+                                        <div class="space-20"></div>	<a href="{{ route("article", ["slug" => \Illuminate\Support\Str::slug($article->title), "id" => $article->id]) }}" class="readmore">Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                                 <a href="#">{{ \Carbon\Carbon::parse($popular->created_at)->diffForhumans() }}</a>
                                             </div>
                                         @endif
-                                        <h4><a href="{{ route("article", ["id" => $popular->id]) }}">{{ \Illuminate\Support\Str::limit($popular->title, 60) }}</a></h4>
+                                        <h4><a href="{{ route("article", ["slug" => \Illuminate\Support\Str::slug($popular->title), "id" => $popular->id]) }}">{{ \Illuminate\Support\Str::limit($popular->title, 60) }}</a></h4>
                                     </div>
                                 </div>
                             @endforeach

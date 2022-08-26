@@ -127,7 +127,7 @@
                                 <div class="col-lg-6 align-self-center">
                                     <div class="next_prv_single border_left3">
                                         <p>PREVIOUS NEWS</p>
-                                        <h3><a href="{{ route("article", ["id" => $previous_article->id]) }}">{{ $previous_article->title }}</a></h3>
+                                        <h3><a href="{{ route("article", ["slug" => \Illuminate\Support\Str::slug($previous_article->title), "id" => $previous_article->id]) }}">{{ $previous_article->title }}</a></h3>
                                     </div>
                                 </div>
                             @endif
@@ -136,7 +136,7 @@
                                 <div class="col-lg-6 align-self-center">
                                     <div class="next_prv_single border_left3">
                                         <p>NEXT NEWS</p>
-                                        <h3><a href="{{ route("article", ["id" => $next_article->id]) }}">{{ $next_article->title }}</a></h3>
+                                        <h3><a href="{{ route("article", ["slug" => \Illuminate\Support\Str::slug($next_article->title), "id" => $next_article->id]) }}">{{ $next_article->title }}</a></h3>
                                     </div>
                                 </div>
                             @endif
@@ -175,7 +175,7 @@
                                         <a href="#">{{ \Carbon\Carbon::parse($article->created_at)->diffForhumans() }}</a>
                                     </div>
                                 @endif
-                                <h4><a href="{{ route("article", ["id" => $article->id]) }}">{{ $article->title }}</a></h4>
+                                <h4><a href="{{ route("article", ["slug" => \Illuminate\Support\Str::slug($article->title), "id" => $article->id]) }}">{{ $article->title }}</a></h4>
                                 <div class="space-10"></div>
                                 <p class="post-p">{{ $article->summary }}</p>
                             </div>

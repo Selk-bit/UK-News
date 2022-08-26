@@ -13,13 +13,13 @@
                             <div class="single_post widgets_small post_type5">
                                 <div class="post_img">
                                     <div class="img_wrap">
-                                        <a href="{{ route("article", ["id" => $popular->id]) }}">
+                                        <a href="{{ route("article", ["slug" => \Illuminate\Support\Str::slug($popular->title), "id" => $popular->id]) }}">
                                             <img src="{{ $popular->thumbnail }}" alt="">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="single_post_text">
-                                    <h4><a href="{{ route("article", ["id" => $popular->id]) }}">{{ \Illuminate\Support\Str::limit($popular->title, 60) }}</a></h4>
+                                    <h4><a href="{{ route("article", ["slug" => \Illuminate\Support\Str::slug($popular->title), "id" => $popular->id]) }}">{{ \Illuminate\Support\Str::limit($popular->title, 60) }}</a></h4>
                                     <p>{{ Str::limit($popular->summary, 20) }}</p>
                                 </div>
                             </div>
@@ -52,7 +52,7 @@
                                                         <a href="#">{{ \Carbon\Carbon::parse($heading->created_at)->diffForhumans() }}</a>
                                                     </div>
                                                 @endif
-                                                <h4><a class="play_btn" href="{{ route("article", ["id" => $heading->id]) }}">{{ \Illuminate\Support\Str::limit($heading->title, 60) }}</a></h4>
+                                                <h4><a class="play_btn" href="{{ route("article", ["slug" => \Illuminate\Support\Str::slug($heading->title), "id" => $heading->id]) }}">{{ \Illuminate\Support\Str::limit($heading->title, 60) }}</a></h4>
                                                 <div class="space-10"></div>
                                                 <p class="post-p">{{ $heading->summary }}...</p>
                                             </div>
@@ -93,7 +93,7 @@
                         @foreach ($articles as $article)
                             <div class="single_post post_type6 post_type7">
                                 <div class="post_img gradient1">
-                                    <a href="{{ route("article", ["id" => $article->id]) }}">
+                                    <a href="{{ route("article", ["slug" => \Illuminate\Support\Str::slug($article->title), "id" => $article->id]) }}">
                                         <img src="{{ $article->thumbnail }}" alt="">
                                     </a>
                                 </div>
@@ -104,7 +104,7 @@
                                         </div>
                                     @endif
                                     <h4>
-                                        <a href="{{ route("article", ["id" => $article->id]) }}"> {{ \Illuminate\Support\Str::limit($article->title, 60) }} </a>
+                                        <a href="{{ route("article", ["slug" => \Illuminate\Support\Str::slug($article->title), "id" => $article->id]) }}"> {{ \Illuminate\Support\Str::limit($article->title, 60) }} </a>
                                     </h4>
                                 </div>
                             </div>
@@ -138,7 +138,7 @@
                                         <a href="#">{{ \Carbon\Carbon::parse($pop->created_at)->diffForhumans() }}</a>
                                     </div>
                                 @endif
-                                <h4><a href="{{ route("article", ["id" => $pop->id]) }}">{{ \Illuminate\Support\Str::limit($pop->title, 60) }}</a></h4>
+                                <h4><a href="{{ route("article", ["slug" => \Illuminate\Support\Str::slug($pop->title), "id" => $pop->id]) }}">{{ \Illuminate\Support\Str::limit($pop->title, 60) }}</a></h4>
                                 <div class="space-10"></div>
                                 <p class="post-p">{{ $pop->summar }}…</p>
                             </div>
@@ -164,7 +164,7 @@
                                             <a href="#">{{ \Carbon\Carbon::parse($random->created_at)->diffForhumans() }}</a>
                                         </div>
                                     @endif
-                                    <h4><a href="{{ route("article", ["id" => $random->id]) }}">{{ \Illuminate\Support\Str::limit($random->title, 60) }}</a></h4>
+                                    <h4><a href="{{ route("article", ["slug" => \Illuminate\Support\Str::slug($random->title), "id" => $random->id]) }}">{{ \Illuminate\Support\Str::limit($random->title, 60) }}</a></h4>
                                 </div>
                             </div>
                             <div class="space-15"></div>
@@ -197,7 +197,7 @@
                                                 <a href="#">{{  \Carbon\Carbon::parse($view->created_at)->diffForhumans() }}</a>
                                             </div>
                                         @endif
-                                        <h4><a href="{{ route("article", ["id" => $view->id]) }}">{{ \Illuminate\Support\Str::limit($view->title, 150) }}</a></h4>
+                                        <h4><a href="{{ route("article", ["slug" => \Illuminate\Support\Str::slug($view->title), "id" => $view->id]) }}">{{ \Illuminate\Support\Str::limit($view->title, 150) }}</a></h4>
                                     </div>
                                     <div class="type8_count">
                                         <h2>{{ $key + 1 }}</h2>

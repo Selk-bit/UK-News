@@ -8,7 +8,6 @@ use Illuminate\Support\Str;
 use JetBrains\PhpStorm\ArrayShape;
 
 
-
 function logo(){
     return asset('/images/logo.png');
 }
@@ -21,6 +20,7 @@ function cover(){
 function favicon(){
     return asset('/images/favicon.png');
 }
+
 
 
 
