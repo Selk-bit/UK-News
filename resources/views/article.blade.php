@@ -97,13 +97,13 @@
 					<img src="{{ $article->thumbnail }}" alt="image">
 					<div class="space-20"></div>
 					<div class="space-20"></div>
-                    {!! $article->body !!}
-                    {{-- @foreach (explode("\n", $article->body) as $paragraph)
+                    {{-- {!! $article->body !!} --}}
+                    @foreach (explode("\n", $article->body) as $paragraph)
                         <p>
                             {{ $paragraph }}
                             <br>
                         </p>
-                    @endforeach --}}
+                    @endforeach
                     <div class="space-40"></div>
                     @if(json_decode($article->keywords))
                         <div class="tags">
