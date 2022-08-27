@@ -100,7 +100,7 @@
                     {{-- {!! $article->body !!} --}}
                     @foreach (explode("\n", $article->body) as $paragraph)
                         <p>
-                            {{ $paragraph }}
+                            {!! $paragraph !!}
                             <br>
                         </p>
                     @endforeach
