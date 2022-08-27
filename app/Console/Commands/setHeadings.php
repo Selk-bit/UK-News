@@ -29,7 +29,7 @@ class setHeadings extends Command
      */
     public function handle()
     {
-        $latest_articles = Article::query()->select("id")->orderBy("id")->limit("10")->pluck("id");
+        $latest_articles = Article::query()->select("id")->orderBy("id", "desc")->limit("10")->pluck("id");
         Article::query()->where("heading", 1)->whereNotIn("id", $latest_articles)->update([
             "heading" => 0
         ]);
