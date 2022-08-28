@@ -23,6 +23,7 @@
     <meta property="og:url" content="@yield('url', request()->fullUrl())">
     <meta property="og:site_name" content="UkraNews">
     <meta property="og:image" content="@yield('image', asset('cover.jpeg')))">
+    <link rel="shortcut icon" href="{{ asset('/images/logo.ico') }}">
     <meta property="og:image:height" content="420">
     <meta property="og:image:width" content="800">
     <meta property="og:image:type" content="image/png" />
