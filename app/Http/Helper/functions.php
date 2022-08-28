@@ -13,7 +13,6 @@ function logo(){
 }
 
 function cover(){
-    dd("bb");
     return asset('/cover.jpeg');
 }
 

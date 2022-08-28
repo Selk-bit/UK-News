@@ -22,7 +22,7 @@
     <meta property="og:description" content="@yield('description', 'Ukraine | All news regarding Ukraine broadcasted by UkraNews')">
     <meta property="og:url" content="@yield('url', request()->fullUrl())">
     <meta property="og:site_name" content="UkraNews">
-    <meta property="og:image" content="@yield('image', asset('/cover.jpeg')))">
+    <meta property="og:image" content="@yield('image', asset('cover.jpeg')))">
     <meta property="og:image:height" content="420">
     <meta property="og:image:width" content="800">
     <meta property="og:image:type" content="image/png" />
@@ -30,7 +30,7 @@
     <meta itemprop="name" content="Ukraine Live News and Information | UkraNews">
     <meta itemprop="alternateName" content="Ukraine Live News and Information | UkraNews">
     <meta itemprop="description" content="@yield('description', 'Ukraine | All news regarding Ukraine broadcasted by UkraNews')">
-    <meta itemprop="image" content="@yield('image', url(asset('/cover.jpeg')))">
+    <meta itemprop="image" content="@yield('image', url(asset('cover.jpeg')))">
     <meta name="author" content="UkraNews" />
     <meta name="twitter:card" content="summary_large_image" />
     @stack('schema')
