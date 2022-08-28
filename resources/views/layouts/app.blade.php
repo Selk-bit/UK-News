@@ -21,7 +21,7 @@
     <meta property="og:title" content="@yield('title', 'Ukraine Live News and Information | {{ env('APP_NAME') }}')">
     <meta property="og:description" content="@yield('description', 'Ukraine | All news regarding Ukraine broadcasted by {{ env('APP_NAME') }}')">
     <meta property="og:url" content="@yield('url', request()->fullUrl())">
-    <meta property="og:site_name" content="{{ env('APP_NAME') }}">
+    <meta property="og:site_name" content={{ env('APP_NAME') }}>
     <meta property="og:image" content="@yield('image', asset('/images/cover.png')))">
     <meta property="og:image:height" content="420">
     <meta property="og:image:width" content="800">
@@ -31,7 +31,7 @@
     <meta itemprop="alternateName" content="Ukraine Live News and Information | {{ env('APP_NAME') }}">
     <meta itemprop="description" content="@yield('description', 'Ukraine | All news regarding Ukraine broadcasted by {{ env('APP_NAME') }}')">
     <meta itemprop="image" content="@yield('image', url(asset('/images/cover.png')))">
-    <meta name="author" content="{{ env('APP_NAME') }}" />
+    <meta name="author" content={{ env('APP_NAME') }} />
     <meta name="twitter:card" content="summary_large_image" />
     @stack('schema')
 	<!--::::: ALL CSS FILES :::::::-->
