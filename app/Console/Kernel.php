@@ -23,7 +23,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('set:heading')->everyFourHours();
-        $schedule->command('set:popular')->everyFourHours();
+        //$schedule->command('set:popular')->everyFourHours();
 
 
     /**
