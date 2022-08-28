@@ -14,7 +14,7 @@
     <link rel="preconnect" href="//code.jquery.com" />
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'/>
     <title>Ukraine Live News and Information | {!! env('APP_NAME') !!}</title>
-    <meta name="description" content="@yield('description', 'Ukraine | All news regarding Ukraine broadcasted by ' . {!! env('APP_NAME') !!} . \'')">
+    <meta name="description" content="@yield('description', 'Ukraine | All news regarding Ukraine broadcasted by ' . {!! env('APP_NAME') !!} . ''\)">
     <link rel="canonical" href="{!! request()->fullUrl() !!}">
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="@yield('type', 'website')">
