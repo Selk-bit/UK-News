@@ -16,12 +16,15 @@ class Kernel extends ConsoleKernel
 
     protected $commands = [
         'App\Console\Commands\setHeadings',
+        'App\Console\Commands\setPopulars',
+
     ];
 
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('set:heading')->everyFourHours();
-    }
+        $schedule->command('set:popular')->everyFourHours();
+
 
     /**
      * Register the commands for the application.

@@ -101,7 +101,7 @@
                     @foreach (explode("\n", $article->body) as $paragraph)
                         <p>
                             {!! $paragraph !!}
-                            <br>
+                            <br><br>
                         </p>
                     @endforeach
                     <div class="space-40"></div>
