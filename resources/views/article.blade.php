@@ -34,20 +34,20 @@
                         "thumbnail": {{ $article->thumbnail }},
                         "publisher": {
                             "@type": "Organization",
-                            "name": {{ env('APP_NAME') }},
+                            "name": "{{ env('APP_NAME') }}",
                             "url": {{ $article->thumbnail }}
                         }
                     },
                     "author": {
                         "@type": "Person",
-                        "name": {{ env('APP_NAME') }},
+                        "name": "{{ env('APP_NAME') }}",
                         "url": {{ env('APP_URL') }},
                         "sameAs": "{{ env('APP_URL') }}"
                     },
                     "publisher": {
                         "@type": "Organization",
-                        "name": {{ env('APP_NAME') }},
-                        "legalName": {{ env('APP_NAME') }},
+                        "name": "{{ env('APP_NAME') }}",
+                        "legalName": "{{ env('APP_NAME') }}",
                         "url": "{{ env('APP_URL') }}",
                         "logo": {
                             "@type": "ImageObject",
@@ -59,7 +59,7 @@
                 },
                 {
                     "@type": "WebSite",
-                    "name": {{ env('APP_NAME') }},
+                    "name": "{{ env('APP_NAME') }}",
                     "url": "{{ env("APP_URL") }}",
                     "potentialAction": {
                         "@type": "SearchAction",
