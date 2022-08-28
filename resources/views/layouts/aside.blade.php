@@ -35,7 +35,7 @@
             </div>
             <div id="post3" class="tab-pane fade">
                 <div class="widget tab_widgets mb30">
-                    @foreach($populars as $popular)
+                    @foreach($populars->slice(0, $limit) as $popular)
                         <div class="single_post widgets_small">
                             <div class="post_img">
                                 <div class="img_wrap">
