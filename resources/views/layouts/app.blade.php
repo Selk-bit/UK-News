@@ -80,7 +80,7 @@
 				<div class="col-lg-8 align-self-center">
 					<div class="banner1">
 						<a href="#">
-							<img src="{{ asset('assets/img/bg/banner1.png')  }}" alt="">
+							<img src="{{ asset('/images/banner_1.jpg')  }}" alt="">
 						</a>
 					</div>
 				</div>
