@@ -14,7 +14,7 @@ function logo(){
 
 function cover(){
     dd("bb");
-    return asset('/images/cover.png');
+    return asset('/cover.jpeg');
 }
 
 function favicon(){
