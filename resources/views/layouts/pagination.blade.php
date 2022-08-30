@@ -16,7 +16,7 @@
                                 <a class="page-link" href="{{ $paginator->nextPageUrl() }}" aria-label="Next"> <span aria-hidden="true"><i class="fas fa-caret-right"></i></span>
                                 </a>
                             </li>
-                        @else
+                        @endif
 
                     </ul>
                 </nav>
