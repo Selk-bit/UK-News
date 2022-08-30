@@ -31,7 +31,8 @@
                             </div>
                         @endforeach
                     </div>
-                    {!! $all_articles->links("pagination::default") !!}
+                    {{-- {!! $all_articles->links("pagination::default") !!} --}}
+                    @include("layouts.pagination", ["paginator" => $all_articles])
 
 
                 </div>

@@ -29,7 +29,7 @@ class ArticleController extends Controller
 
     public function get_welcome_articles()
     {
-        $heading_ids = Article::query()->select("id")->where("heading", 1)->orderBy("id")->pluck("id");
+        $heading_ids = Article::query()->select("id")->where("heading", 1)->orderBy("created_at", "desc")->pluck("id");
         $views_ids = Article::query()->select("id")->orderBy("views", "Desc")->limit(6)->pluck("id");
         $randoms_ids = Article::query()->select("id")->inRandomOrder()->limit(6)->pluck("id");
         // $heading_ids_arr = $heading_ids->toArray();
