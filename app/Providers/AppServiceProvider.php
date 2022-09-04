@@ -54,6 +54,7 @@ class AppServiceProvider extends ServiceProvider
 
         return Article::query()
             ->select("id", "title", "summary", "thumbnail", "created_at", "popular", "heading", "views")
+            ->orderBy("created_at", "desc")
             ->whereIn("id", $populars_ids)
             ->get();
 
