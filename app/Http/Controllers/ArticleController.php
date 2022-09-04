@@ -29,9 +29,25 @@ class ArticleController extends Controller
 
     public function get_welcome_articles()
     {
-        $heading_ids = Article::query()->select("id")->where("heading", 1)->orderBy("created_at", "desc")->pluck("id");
-        $views_ids = Article::query()->select("id")->orderBy("views", "Desc")->limit(6)->pluck("id");
-        $randoms_ids = Article::query()->select("id")->inRandomOrder()->limit(6)->pluck("id");
+        $heading_ids = Article::query()
+            ->select("id")
+            ->where("heading", 1)
+            ->orderBy("created_at", "desc")
+            ->pluck("id");
+
+        $views_ids = Article::query()
+            ->select("id")
+            ->orderBy("views", "Desc")
+            ->limit(6)
+            ->pluck("id");
+
+        $randoms_ids = Article::query()
+            ->select("id")
+            ->orderBy("created_at", "desc")
+            ->limit(30)
+            ->whereNotIn("id", $views_ids)
+            ->whereNotIn("id", $heading_ids)
+            ->pluck("id");
         // $heading_ids_arr = $heading_ids->toArray();
         // if(count($heading_ids_arr) > 1){
         //     array_pop($heading_ids_arr);
@@ -39,22 +55,43 @@ class ArticleController extends Controller
         // if($heading_ids_arr && !in_array($heading_ids_arr[0], $articles_ids->toArray())){
         //     $articles_ids[] = $heading_ids_arr[0];
         // }
-        $headings = Article::query()->select("id", "title", "summary", "thumbnail", "created_at", "popular", "heading", "views")->whereIn("id", $heading_ids)->get();
-        $views  = Article::query()->select("id", "title", "summary", "thumbnail", "created_at", "popular", "heading", "views")->orderBy("views", "Desc")->whereIn("id", $views_ids)->get();
-        $randoms  = Article::query()->select("id", "title", "summary", "thumbnail", "created_at", "popular", "heading", "views")->whereIn("id", $randoms_ids)->get();
+        $headings = Article::query()
+            ->select("id", "title", "summary", "thumbnail", "created_at", "popular", "heading", "views")
+            ->whereIn("id", $heading_ids)
+            ->get();
+
+        $views  = Article::query()
+            ->select("id", "title", "summary", "thumbnail", "created_at", "popular", "heading", "views")
+            ->orderBy("views", "Desc")
+            ->whereIn("id", $views_ids)
+            ->get();
+
+        $randoms  = Article::query()
+            ->select("id", "title", "summary", "thumbnail", "created_at", "popular", "heading", "views")
+            ->whereIn("id", $randoms_ids)
+            ->inRandomOrder()
+            ->limit(6)
+            ->get();
 
         return view("welcome", compact("headings", "views", "randoms"));
     }
 
     public function get_all_articles()
     {
-        $all_articles = Article::query()->select("id", "title", "summary", "thumbnail", "created_at")->latest("id")->paginate(10);
+        $all_articles = Article::query()->select("id", "title", "summary", "thumbnail", "created_at")
+            ->latest("id")
+            ->paginate(10);
+
         return view("articles", compact("all_articles"));
     }
 
     public function get_trends()
     {
-        $all_articles = Article::query()->select("id", "title", "summary", "thumbnail", "created_at")->latest("id")->where('popular', 1)->paginate(10);
+        $all_articles = Article::query()->select("id", "title", "summary", "thumbnail", "created_at")
+            ->latest("id")
+            ->where('popular', 1)
+            ->paginate(10);
+
         return view("articles", compact("all_articles"));
     }
 

@@ -31,14 +31,31 @@ class AppServiceProvider extends ServiceProvider
 
     public function articles()
     {
-        $articles_ids = Article::query()->select("id")->orderBy("created_at", "desc")->limit(20)->pluck("id");
-        return Article::query()->select("id", "title", "summary", "thumbnail", "created_at", "popular", "heading", "views")->orderBy("created_at", "desc")->whereIn("id", $articles_ids)->get();
+        $articles_ids = Article::query()
+            ->select("id")
+            ->orderBy("created_at", "desc")
+            ->limit(20)
+            ->pluck("id");
+
+        return Article::query()
+            ->select("id", "title", "summary", "thumbnail", "created_at", "popular", "heading", "views")
+            ->orderBy("created_at", "desc")
+            ->whereIn("id", $articles_ids)
+            ->get();
     }
 
     public function populars()
     {
-        $populars_ids = Article::query()->select("id")->where("popular", 1)->orderBy("created_at", "desc")->limit(10)->pluck("id");
-        return Article::query()->select("id", "title", "summary", "thumbnail", "created_at", "popular", "heading", "views")->whereIn("id", $populars_ids)->get();
+        $populars_ids = Article::query()
+            ->select("id")
+            ->where("popular", 1)
+            ->orderBy("created_at", "desc")
+            ->limit(10)->pluck("id");
+
+        return Article::query()
+            ->select("id", "title", "summary", "thumbnail", "created_at", "popular", "heading", "views")
+            ->whereIn("id", $populars_ids)
+            ->get();
 
     }
 }
