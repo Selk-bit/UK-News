@@ -48,7 +48,7 @@ class setPopulars extends Command
             if(strpos($href, date("Y")) !== false && !in_array($href, $arr)){
                 $arr[] = $href;
                 $url = "https://fr.euronews.com/tag/" . $href;
-                echo $url;
+                echo $url . "\n";
                 Article::query()->where("url", $url)->update([
                     "popular" => 1
                 ]);
